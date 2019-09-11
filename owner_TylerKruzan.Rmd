@@ -1,0 +1,80 @@
+---
+title: "owner_TylerKruzan"
+author: "Tyler Kruzan"
+date: "9/5/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#Lab 1
+
+R Markdown
+Tyler Kruzan
+
+####I am studying Data Analytics
+
+####Tools for Organizing Work:
+1. Follow a uniform structure for taking notes & saving files.
+2. Organize documents and files by Class and semester taken. 
+3. Pay attention in class!
+
+####Interesting Fact: I play tennis
+
+
+##Understanding Concepts:
+1. Explain the difference between Git and Github.
+  Git is a version control system that helps programmers track different drafts of code. 
+  Github is a remote repository that allows programmers to save drafts on the web and collaborate with others
+  
+2. Can Git and Github be used independently? Why don't we do so? Describe the advantages and disadvantages. 
+  Yes, you can use Git without Github, but in order to use Github you must use git and bash commands.
+  We don't use them independently so that we can easily track and collaborate on our files. 
+  
+
+3. What is a repository in Git and how can you create a repository in Git (write out the command(s))?
+
+
+
+# Coding Exercises 
+
+  You may work on this with your partner or individually. 
+
+1. Write code to count the total number of `NA` occurrences in the vector `X = c(47,34,33,65,37,NA,43,NA,11,NA,23,NA)`.
+
+numNas = length(which(is.na(X)))
+which(is.na(X) & is.na(Y))
+
+
+2. Run the following code: 
+
+   ```{r}
+   age = c(25,30,45,60,12,41)
+   smoker = c('T','F','T','F','F','F')
+   weight = c(120,137,0,168,91,142)
+   example_data = data.frame(age,smoker,weight)
+   ```
+   
+  This code took three vectors (`age`, `smoker`, and `weight`) and binded them together into an `R` object known as a 
+  `data.frame`. The advantage of `data.frame` is that it can handle vectors of different types. For example, age is a numeric 
+    vector but smoker status is a character vector (T or F). We named this `data.frame` as `example_data`. I obviously made a
+    data entry error: someone cannot have 0 weight. The correct weight should be 150 pounds. Write one line of code that can 
+    easily correct this using the `[]` syntax. 
+example_data[3,3] = 150
+
+3. In the following I have two code snippets. Turn these code snippets into functions. Think about what each function does
+  and what you would name it. How many arguments does it need? 
+  ```{r, eval=FALSE}
+  mean(is.na(x)) #finds the mean of a certain value
+
+  x / sum(x, na.rm = TRUE) #finds the mean of certain vector with NA values removed
+  ```
+  
+  
+4. Write a function named `both_na()`. This function take two vectors of the same length and returns the number of positions that have an `NA` value in both vectors. 
+
+
+both_na = function(x,y) {
+  length(which(is.na(x) & is.na(y)))
+}
